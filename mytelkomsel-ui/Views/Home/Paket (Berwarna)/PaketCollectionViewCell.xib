@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="PaketCollectionViewCell" customModule="mytelkomsel_ui" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rt-1V-QfV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="116.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet OMG!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-em-chc">
+                                <rect key="frame" x="122" y="30" width="180" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="omg" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-5t-FWb">
+                                <rect key="frame" x="12" y="12" width="92" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="yT5-GH-2Hx"/>
+                                    <constraint firstAttribute="height" constant="92" id="z1h-ul-8Rl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bisa Youtube dan Ngepet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2Y-iZ-8kF">
+                                <rect key="frame" x="122" y="48" width="180" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93458670377731323" green="0.16848236322402954" blue="0.15587112307548523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j2Y-iZ-8kF" firstAttribute="leading" secondItem="vJL-em-chc" secondAttribute="leading" id="5TQ-7H-ouT"/>
+                            <constraint firstAttribute="bottom" secondItem="j2Y-iZ-8kF" secondAttribute="bottom" priority="250" constant="20" id="8Pb-X4-nww"/>
+                            <constraint firstAttribute="trailing" secondItem="vJL-em-chc" secondAttribute="trailing" constant="18" id="HLy-zW-ApB"/>
+                            <constraint firstItem="vJL-em-chc" firstAttribute="top" secondItem="4Rt-1V-QfV" secondAttribute="top" constant="30" id="Ii1-vD-ua0"/>
+                            <constraint firstItem="d7e-5t-FWb" firstAttribute="leading" secondItem="4Rt-1V-QfV" secondAttribute="leading" constant="12" id="W2J-vo-SIa"/>
+                            <constraint firstItem="d7e-5t-FWb" firstAttribute="top" secondItem="4Rt-1V-QfV" secondAttribute="top" constant="12" id="arZ-Zo-0hm"/>
+                            <constraint firstItem="j2Y-iZ-8kF" firstAttribute="trailing" secondItem="vJL-em-chc" secondAttribute="trailing" id="cob-L4-AA3"/>
+                            <constraint firstItem="vJL-em-chc" firstAttribute="leading" secondItem="d7e-5t-FWb" secondAttribute="trailing" constant="18" id="kwh-de-ukK"/>
+                            <constraint firstItem="j2Y-iZ-8kF" firstAttribute="top" secondItem="vJL-em-chc" secondAttribute="bottom" constant="4" id="p25-9K-cAk"/>
+                            <constraint firstAttribute="bottom" secondItem="d7e-5t-FWb" secondAttribute="bottom" constant="12" id="zHi-ba-Sob"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4Rt-1V-QfV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DB6-eq-Ua9"/>
+                    <constraint firstAttribute="trailing" secondItem="4Rt-1V-QfV" secondAttribute="trailing" id="Rfv-Ip-zK6"/>
+                    <constraint firstItem="4Rt-1V-QfV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jlF-e2-D2W"/>
+                    <constraint firstAttribute="bottom" secondItem="4Rt-1V-QfV" secondAttribute="bottom" id="rxS-5z-2gk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="paketDescLabel" destination="j2Y-iZ-8kF" id="Pmw-VX-aAH"/>
+                <outlet property="paketImage" destination="d7e-5t-FWb" id="qFv-jt-gVY"/>
+                <outlet property="paketNameLabel" destination="vJL-em-chc" id="BMk-xy-sz9"/>
+                <outlet property="paketView" destination="4Rt-1V-QfV" id="Oco-oE-bH7"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="106.80803571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="omg" width="81" height="82"/>
+    </resources>
+</document>
