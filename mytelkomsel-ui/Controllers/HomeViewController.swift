@@ -111,4 +111,12 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 9
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 6{
+//            return 300
+//        } else {
+//            return UITableView.automaticDimension
+//        }
+//    }
 }

@@ -30,6 +30,13 @@ extension VoucherColTableViewCell: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = voucherCollectionView.dequeueReusableCell(withReuseIdentifier: VoucherCollectionViewCell.identifier, for: indexPath) as? VoucherCollectionViewCell else {return UICollectionViewCell()}
+//        cell.layer.cornerRadius = 15.0
+//        cell.layer.borderWidth = 0.0
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        cell.layer.shadowRadius = 5.0
+//        cell.layer.shadowOpacity = 1
+//        cell.layer.masksToBounds = false
         return cell
     }
     

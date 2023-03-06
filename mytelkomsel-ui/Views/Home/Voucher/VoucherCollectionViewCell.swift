@@ -15,6 +15,13 @@ class VoucherCollectionViewCell: UICollectionViewCell {
             voucherView.layer.borderColor = UIColor.borderColor.cgColor
             voucherView.layer.borderWidth = 2
             voucherView.layer.cornerRadius = 10
+//            
+//            voucherView.layer.cornerRadius = 10
+//            voucherView.layer.shadowColor = UIColor.black.cgColor
+//            voucherView.layer.shadowRadius = 5
+//            voucherView.layer.shadowOpacity = 0.4
+//            voucherView.layer.shadowOffset = .zero
+//            voucherView.backgroundColor = .white
         }
     }
     @IBOutlet weak var voucherImage: UIImageView!{
