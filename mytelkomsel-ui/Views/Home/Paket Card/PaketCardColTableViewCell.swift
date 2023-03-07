@@ -12,6 +12,7 @@ class PaketCardColTableViewCell: UITableViewCell {
     static let identifier = "PaketCardColTableViewCell"
     
     @IBOutlet weak var paketCardCollectionView: UICollectionView!
+    weak var delegate:CollectionViewInsideTableViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +24,7 @@ class PaketCardColTableViewCell: UITableViewCell {
         paketCardCollectionView.delegate = self
         paketCardCollectionView.dataSource = self
         paketCardCollectionView.register(UINib(nibName: "PaketCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PaketCardCollectionViewCell.identifier)
+        paketCardCollectionView.showsHorizontalScrollIndicator = false
     }
 }
 
@@ -43,6 +45,10 @@ extension PaketCardColTableViewCell: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.cellTaped(data: indexPath)
+    }
 }

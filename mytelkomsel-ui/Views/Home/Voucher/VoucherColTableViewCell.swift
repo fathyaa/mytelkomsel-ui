@@ -20,6 +20,7 @@ class VoucherColTableViewCell: UITableViewCell {
         voucherCollectionView.delegate = self
         voucherCollectionView.dataSource = self
         voucherCollectionView.register(UINib(nibName: "VoucherCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: VoucherCollectionViewCell.identifier)
+        voucherCollectionView.showsHorizontalScrollIndicator = false
     }
 }
 
@@ -30,18 +31,12 @@ extension VoucherColTableViewCell: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = voucherCollectionView.dequeueReusableCell(withReuseIdentifier: VoucherCollectionViewCell.identifier, for: indexPath) as? VoucherCollectionViewCell else {return UICollectionViewCell()}
-//        cell.layer.cornerRadius = 15.0
-//        cell.layer.borderWidth = 0.0
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        cell.layer.shadowRadius = 5.0
-//        cell.layer.shadowOpacity = 1
-//        cell.layer.masksToBounds = false
+        cell.clipsToBounds = false
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 1.3, height: collectionView.frame.size.height)
+        return CGSize(width: collectionView.frame.size.width / 1.7, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

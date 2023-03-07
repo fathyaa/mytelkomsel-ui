@@ -17,47 +17,58 @@
                 <rect key="frame" x="0.0" y="0.0" width="248" height="185"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-JX-NDv">
-                        <rect key="frame" x="0.0" y="0.0" width="248" height="185"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trd-bj-bl9">
+                        <rect key="frame" x="0.0" y="8" width="248" height="169.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voucher1" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-MO-zml">
-                                <rect key="frame" x="0.0" y="0.0" width="248" height="112"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-JX-NDv">
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="169.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voucher1" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-MO-zml">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="248" id="huF-Cr-coS"/>
+                                            <constraint firstAttribute="height" constant="112" id="r61-oU-Jm2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Benefits from DOUBLE UNTUNG whayahe wayahe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-be-zT9">
+                                        <rect key="frame" x="12" y="124" width="224" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="248" id="huF-Cr-coS"/>
-                                    <constraint firstAttribute="height" constant="112" id="r61-oU-Jm2"/>
+                                    <constraint firstItem="L2w-be-zT9" firstAttribute="top" secondItem="4fP-MO-zml" secondAttribute="bottom" constant="12" id="FKP-v0-kId"/>
+                                    <constraint firstAttribute="trailing" secondItem="4fP-MO-zml" secondAttribute="trailing" id="FW2-ob-jiV"/>
+                                    <constraint firstItem="4fP-MO-zml" firstAttribute="top" secondItem="Ye2-JX-NDv" secondAttribute="top" id="R1b-ud-HP4"/>
+                                    <constraint firstAttribute="trailing" secondItem="L2w-be-zT9" secondAttribute="trailing" constant="12" id="eu6-Jb-Pmp"/>
+                                    <constraint firstItem="L2w-be-zT9" firstAttribute="leading" secondItem="Ye2-JX-NDv" secondAttribute="leading" constant="12" id="mcb-RI-A5f"/>
+                                    <constraint firstAttribute="bottom" secondItem="L2w-be-zT9" secondAttribute="bottom" constant="12" id="n7F-wT-jAk"/>
+                                    <constraint firstItem="4fP-MO-zml" firstAttribute="leading" secondItem="Ye2-JX-NDv" secondAttribute="leading" id="qpe-qn-EzM"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Benefits from DOUBLE UNTUNG whayahe wayahe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-be-zT9">
-                                <rect key="frame" x="12" y="124" width="224" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L2w-be-zT9" firstAttribute="top" secondItem="4fP-MO-zml" secondAttribute="bottom" constant="12" id="FKP-v0-kId"/>
-                            <constraint firstAttribute="trailing" secondItem="4fP-MO-zml" secondAttribute="trailing" id="FW2-ob-jiV"/>
-                            <constraint firstItem="4fP-MO-zml" firstAttribute="top" secondItem="Ye2-JX-NDv" secondAttribute="top" id="R1b-ud-HP4"/>
-                            <constraint firstAttribute="trailing" secondItem="L2w-be-zT9" secondAttribute="trailing" constant="12" id="eu6-Jb-Pmp"/>
-                            <constraint firstItem="L2w-be-zT9" firstAttribute="leading" secondItem="Ye2-JX-NDv" secondAttribute="leading" constant="12" id="mcb-RI-A5f"/>
-                            <constraint firstAttribute="bottom" secondItem="L2w-be-zT9" secondAttribute="bottom" constant="12" id="n7F-wT-jAk"/>
-                            <constraint firstItem="4fP-MO-zml" firstAttribute="leading" secondItem="Ye2-JX-NDv" secondAttribute="leading" id="qpe-qn-EzM"/>
+                            <constraint firstItem="Ye2-JX-NDv" firstAttribute="leading" secondItem="trd-bj-bl9" secondAttribute="leading" id="CIr-NA-QQE"/>
+                            <constraint firstItem="Ye2-JX-NDv" firstAttribute="top" secondItem="trd-bj-bl9" secondAttribute="top" id="J3i-gF-sDE"/>
+                            <constraint firstAttribute="bottom" secondItem="Ye2-JX-NDv" secondAttribute="bottom" id="YBM-H4-JpY"/>
+                            <constraint firstAttribute="trailing" secondItem="Ye2-JX-NDv" secondAttribute="trailing" id="cBf-LZ-iZO"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Ye2-JX-NDv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5lN-m0-Gxc"/>
-                <constraint firstItem="Ye2-JX-NDv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JMv-sP-B8k"/>
-                <constraint firstAttribute="trailing" secondItem="Ye2-JX-NDv" secondAttribute="trailing" id="Tu9-nh-HUB"/>
-                <constraint firstAttribute="bottom" secondItem="Ye2-JX-NDv" secondAttribute="bottom" id="tvD-sd-iC7"/>
+                <constraint firstItem="trd-bj-bl9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="cTI-hq-mko"/>
+                <constraint firstItem="trd-bj-bl9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="iNY-cd-WPl"/>
             </constraints>
             <size key="customSize" width="248" height="185"/>
             <connections>
                 <outlet property="voucherImage" destination="4fP-MO-zml" id="GBy-GJ-vcY"/>
                 <outlet property="voucherLabel" destination="L2w-be-zT9" id="RtF-Mf-jK9"/>
+                <outlet property="voucherShadowView" destination="trd-bj-bl9" id="ncX-GA-5ho"/>
                 <outlet property="voucherView" destination="Ye2-JX-NDv" id="FWP-zC-a75"/>
             </connections>
             <point key="canvasLocation" x="275.36231884057975" y="103.45982142857143"/>

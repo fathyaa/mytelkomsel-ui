@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CollectionViewInsideTableViewDelegate: class {
+    func cellTaped(data:IndexPath)
+}
+
 enum homeSection: Int{
     case paket
     case judulLanggananKamu
@@ -66,7 +70,7 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
+extension HomeViewController : UITableViewDelegate, UITableViewDataSource, CollectionViewInsideTableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 1
     }
@@ -82,6 +86,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
             return cell
         case .paketLanggananKamuCard:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
+            cell.delegate = self
             return cell
         case .judulPopular:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
@@ -89,7 +94,8 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
             return cell
         case .paketPopularCard:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
-            return cell
+                cell.delegate = self
+                return cell
         case .judulVoucher:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
             cell.judulSectionLabel.text = "Cari Tuyul, Yuk!"
@@ -104,6 +110,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
             return cell
         case .paketBelajarCard:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
+            cell.delegate = self
             return cell
         }
     }
@@ -112,11 +119,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         return 9
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 6{
-//            return 300
-//        } else {
-//            return UITableView.automaticDimension
-//        }
-//    }
+    func cellTaped(data: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPaketViewController") as! DetailPaketViewController
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

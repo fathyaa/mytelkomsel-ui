@@ -21,6 +21,7 @@ class PaketColTableViewCell: UITableViewCell {
         paketCollectionView.delegate = self
         paketCollectionView.dataSource = self
         paketCollectionView.register(UINib(nibName: "PaketCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PaketCollectionViewCell.identifier)
+        paketCollectionView.showsHorizontalScrollIndicator = false
     }
     
 }
