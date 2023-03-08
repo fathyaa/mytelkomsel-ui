@@ -10,18 +10,22 @@ import UIKit
 class JudulDetailTableViewCell: UITableViewCell {
     
     static let identifier = "JudulDetailTableViewCell"
-    @IBOutlet weak var hargaAwalLabel: UILabel!
-    @IBOutlet weak var hargaDIskonLabel: UILabel!
+    @IBOutlet weak var hargaAwalLabel: UILabel!{
+            didSet{
+                let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: "Rp99.000")
+                    attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
+                hargaAwalLabel.attributedText = attributeString
+            }
+    }
+    @IBOutlet weak var hargaDiskonLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    func setJudulDetail(parseDataLanggananKamu: PaketLanggananKamuStruct){
+        hargaAwalLabel.text = parseDataLanggananKamu.hargaAwal
+        hargaDiskonLabel.text = parseDataLanggananKamu.hargaDiskon
+    }
 }

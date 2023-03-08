@@ -96,5 +96,20 @@ class PaketCardCollectionViewCell: UICollectionViewCell {
             saveButton.rightAnchor.constraint(equalTo: paketCardView.rightAnchor, constant: -17)
         ])
     }
+    
+    func setDataLanggananKamu(parseLanggananKamu: PaketLanggananKamuStruct){
+        
+        if parseLanggananKamu.hargaAwal.isEmpty{
+            hargaAwalLabel.text = "empty"
+            hargaAwalLabel.textColor = UIColor.white
+            
+        }
+        
+        namaKuotaLabel.text = parseLanggananKamu.nama
+        jumlahKuotaLabel.text = parseLanggananKamu.jumlah
+        hargaAwalLabel.text = parseLanggananKamu.hargaAwal
+        hargaDiskonLabel.text = parseLanggananKamu.hargaDiskon
+        masaAktifLabel.text = parseLanggananKamu.masaAktif
+    }
 
 }

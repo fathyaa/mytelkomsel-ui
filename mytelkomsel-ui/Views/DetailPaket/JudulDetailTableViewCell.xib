@@ -54,7 +54,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="hargaAwalLabel" destination="hs6-VP-6L3" id="sZi-Db-C2V"/>
-                <outlet property="hargaDIskonLabel" destination="SfD-dd-cv4" id="bEQ-ci-D6F"/>
+                <outlet property="hargaDiskonLabel" destination="SfD-dd-cv4" id="owM-Bx-3pH"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="76.339285714285708"/>
         </tableViewCell>

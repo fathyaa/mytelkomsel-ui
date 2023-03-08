@@ -20,8 +20,7 @@
 		36212D4E29B734DE00D5F45C /* NotifPembayaranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36212D4D29B734DE00D5F45C /* NotifPembayaranViewController.swift */; };
 		36BF767A29B5AA430097CA54 /* JudulSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF767829B5AA430097CA54 /* JudulSectionTableViewCell.swift */; };
 		36BF767B29B5AA430097CA54 /* JudulSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF767929B5AA430097CA54 /* JudulSectionTableViewCell.xib */; };
-		36BF767E29B5AEBD0097CA54 /* PaketCardColTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF767C29B5AEBD0097CA54 /* PaketCardColTableViewCell.swift */; };
-		36BF767F29B5AEBD0097CA54 /* PaketCardColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF767D29B5AEBD0097CA54 /* PaketCardColTableViewCell.xib */; };
+		36BF767E29B5AEBD0097CA54 /* LanggananKamuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF767C29B5AEBD0097CA54 /* LanggananKamuTableViewCell.swift */; };
 		36BF768629B5B05F0097CA54 /* PaketCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF768429B5B05F0097CA54 /* PaketCardCollectionViewCell.swift */; };
 		36BF768729B5B05F0097CA54 /* PaketCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF768529B5B05F0097CA54 /* PaketCardCollectionViewCell.xib */; };
 		36BF768929B5C8C10097CA54 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF768829B5C8C10097CA54 /* UIColorExtension.swift */; };
@@ -38,6 +37,9 @@
 		36C6193D29B6ECC30048C2C7 /* RincianTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6193B29B6ECC30048C2C7 /* RincianTableViewCell.xib */; };
 		36C6194029B713980048C2C7 /* DeskripsiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C6193E29B713980048C2C7 /* DeskripsiTableViewCell.swift */; };
 		36C6194129B713980048C2C7 /* DeskripsiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6193F29B713980048C2C7 /* DeskripsiTableViewCell.xib */; };
+		36D43A2229B82EFA007A0E8E /* PaketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D43A2129B82EFA007A0E8E /* PaketModel.swift */; };
+		36D43A2429B876EF007A0E8E /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D43A2329B876EF007A0E8E /* PopularTableViewCell.swift */; };
+		36D43A2729B88102007A0E8E /* BelajarDiRumahAjaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D43A2629B88102007A0E8E /* BelajarDiRumahAjaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +58,7 @@
 		36212D4D29B734DE00D5F45C /* NotifPembayaranViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifPembayaranViewController.swift; sourceTree = "<group>"; };
 		36BF767829B5AA430097CA54 /* JudulSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudulSectionTableViewCell.swift; sourceTree = "<group>"; };
 		36BF767929B5AA430097CA54 /* JudulSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JudulSectionTableViewCell.xib; sourceTree = "<group>"; };
-		36BF767C29B5AEBD0097CA54 /* PaketCardColTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketCardColTableViewCell.swift; sourceTree = "<group>"; };
-		36BF767D29B5AEBD0097CA54 /* PaketCardColTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaketCardColTableViewCell.xib; sourceTree = "<group>"; };
+		36BF767C29B5AEBD0097CA54 /* LanggananKamuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanggananKamuTableViewCell.swift; sourceTree = "<group>"; };
 		36BF768429B5B05F0097CA54 /* PaketCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		36BF768529B5B05F0097CA54 /* PaketCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaketCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		36BF768829B5C8C10097CA54 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		36C6193B29B6ECC30048C2C7 /* RincianTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RincianTableViewCell.xib; sourceTree = "<group>"; };
 		36C6193E29B713980048C2C7 /* DeskripsiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskripsiTableViewCell.swift; sourceTree = "<group>"; };
 		36C6193F29B713980048C2C7 /* DeskripsiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeskripsiTableViewCell.xib; sourceTree = "<group>"; };
+		36D43A2129B82EFA007A0E8E /* PaketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketModel.swift; sourceTree = "<group>"; };
+		36D43A2329B876EF007A0E8E /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		36D43A2629B88102007A0E8E /* BelajarDiRumahAjaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelajarDiRumahAjaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 		3610BE8F29B599A600D75CD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				36D43A2129B82EFA007A0E8E /* PaketModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,7 +157,7 @@
 				36BF768A29B5D35A0097CA54 /* Voucher */,
 				36BF768229B5AF310097CA54 /* Judul Section */,
 				36BF768129B5AF050097CA54 /* Paket Card */,
-				36BF768029B5AEC40097CA54 /* Paket (Berwarna) */,
+				36BF768029B5AEC40097CA54 /* Paket (Paling Atas Berwarna) */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -179,7 +184,7 @@
 			path = NotifPembayaran;
 			sourceTree = "<group>";
 		};
-		36BF768029B5AEC40097CA54 /* Paket (Berwarna) */ = {
+		36BF768029B5AEC40097CA54 /* Paket (Paling Atas Berwarna) */ = {
 			isa = PBXGroup;
 			children = (
 				3610BE9329B59AF300D75CD2 /* PaketCollectionViewCell.swift */,
@@ -187,16 +192,16 @@
 				3610BE9B29B5A06B00D75CD2 /* PaketColTableViewCell.swift */,
 				3610BE9C29B5A06B00D75CD2 /* PaketColTableViewCell.xib */,
 			);
-			path = "Paket (Berwarna)";
+			path = "Paket (Paling Atas Berwarna)";
 			sourceTree = "<group>";
 		};
 		36BF768129B5AF050097CA54 /* Paket Card */ = {
 			isa = PBXGroup;
 			children = (
-				36BF767C29B5AEBD0097CA54 /* PaketCardColTableViewCell.swift */,
-				36BF767D29B5AEBD0097CA54 /* PaketCardColTableViewCell.xib */,
-				36BF768429B5B05F0097CA54 /* PaketCardCollectionViewCell.swift */,
-				36BF768529B5B05F0097CA54 /* PaketCardCollectionViewCell.xib */,
+				36D43A2529B88081007A0E8E /* Card Reuseable */,
+				36BF767C29B5AEBD0097CA54 /* LanggananKamuTableViewCell.swift */,
+				36D43A2329B876EF007A0E8E /* PopularTableViewCell.swift */,
+				36D43A2629B88102007A0E8E /* BelajarDiRumahAjaTableViewCell.swift */,
 			);
 			path = "Paket Card";
 			sourceTree = "<group>";
@@ -236,6 +241,15 @@
 				36BF768829B5C8C10097CA54 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		36D43A2529B88081007A0E8E /* Card Reuseable */ = {
+			isa = PBXGroup;
+			children = (
+				36BF768529B5B05F0097CA54 /* PaketCardCollectionViewCell.xib */,
+				36BF768429B5B05F0097CA54 /* PaketCardCollectionViewCell.swift */,
+			);
+			path = "Card Reuseable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +315,6 @@
 				36BF768E29B5D38D0097CA54 /* VoucherColTableViewCell.xib in Resources */,
 				3610BE8629B5992700D75CD2 /* LaunchScreen.storyboard in Resources */,
 				36BF769229B5D4120097CA54 /* VoucherCollectionViewCell.xib in Resources */,
-				36BF767F29B5AEBD0097CA54 /* PaketCardColTableViewCell.xib in Resources */,
 				3610BE8329B5992700D75CD2 /* Assets.xcassets in Resources */,
 				3610BE8129B5992400D75CD2 /* Main.storyboard in Resources */,
 				36C6193929B6E5AF0048C2C7 /* MasaAktifTableViewCell.xib in Resources */,
@@ -322,6 +335,7 @@
 			files = (
 				36BF767A29B5AA430097CA54 /* JudulSectionTableViewCell.swift in Sources */,
 				36212D4E29B734DE00D5F45C /* NotifPembayaranViewController.swift in Sources */,
+				36D43A2429B876EF007A0E8E /* PopularTableViewCell.swift in Sources */,
 				36BF769129B5D4120097CA54 /* VoucherCollectionViewCell.swift in Sources */,
 				36C6193C29B6ECC30048C2C7 /* RincianTableViewCell.swift in Sources */,
 				3610BE7E29B5992400D75CD2 /* HomeViewController.swift in Sources */,
@@ -331,10 +345,12 @@
 				3610BE7A29B5992400D75CD2 /* AppDelegate.swift in Sources */,
 				36C6194029B713980048C2C7 /* DeskripsiTableViewCell.swift in Sources */,
 				36BF769529B5E41E0097CA54 /* DetailPaketViewController.swift in Sources */,
+				36D43A2229B82EFA007A0E8E /* PaketModel.swift in Sources */,
 				3610BE7C29B5992400D75CD2 /* SceneDelegate.swift in Sources */,
 				36BF768D29B5D38D0097CA54 /* VoucherColTableViewCell.swift in Sources */,
-				36BF767E29B5AEBD0097CA54 /* PaketCardColTableViewCell.swift in Sources */,
+				36BF767E29B5AEBD0097CA54 /* LanggananKamuTableViewCell.swift in Sources */,
 				36BF768629B5B05F0097CA54 /* PaketCardCollectionViewCell.swift in Sources */,
+				36D43A2729B88102007A0E8E /* BelajarDiRumahAjaTableViewCell.swift in Sources */,
 				36BF768929B5C8C10097CA54 /* UIColorExtension.swift in Sources */,
 				3610BE9529B59AF300D75CD2 /* PaketCollectionViewCell.swift in Sources */,
 			);

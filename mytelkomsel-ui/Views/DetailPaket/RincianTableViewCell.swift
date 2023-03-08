@@ -18,4 +18,9 @@ class RincianTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    func setRincian(parseDataRincian: RincianPaketStruct){
+        jenisRincianLabel.text = parseDataRincian.jenis
+        jumlahLabel.text = parseDataRincian.jumlah
+    }
+    
 }

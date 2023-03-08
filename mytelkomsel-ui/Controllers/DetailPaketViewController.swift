@@ -31,6 +31,7 @@ enum detailSection: Int {
 
 class DetailPaketViewController: UIViewController {
     
+    var dataLanggananKamu: PaketLanggananKamuStruct?
     @IBOutlet weak var detailPaketTableView: UITableView!
     @IBOutlet weak var beliSekarangButton: UIButton!{
         didSet{
@@ -41,7 +42,7 @@ class DetailPaketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "ㅤㅤㅤㅤㅤ149 GB"
+        title = dataLanggananKamu?.jumlah
         setupPaketTableView()
         self.beliSekarangButton.addTarget(self, action: #selector(navigateToNotif), for: .touchUpInside)
     }
@@ -66,7 +67,7 @@ class DetailPaketViewController: UIViewController {
 extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2{
-            return 4
+            return dataLanggananKamu?.rincian.count ?? 0
         } else {
             return 1
         }
@@ -76,15 +77,30 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
         switch detailSection(indexPath.section){
         case .judulDetail:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: JudulDetailTableViewCell.identifier, for: indexPath) as? JudulDetailTableViewCell else {return UITableViewCell()}
+            
+            if let data = dataLanggananKamu{
+            cell.setJudulDetail(parseDataLanggananKamu: data)
+            }
+            
             return cell
+            
         case .masaAktif:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: MasaAktifTableViewCell.identifier, for: indexPath) as? MasaAktifTableViewCell else {return UITableViewCell()}
             cell.setupMasaAktif()
+            
+            if let data = dataLanggananKamu{
+            cell.setMasaAktif(parseDataLanggananKamu: data)
+            }
+            
             return cell
+            
         case .rincian:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: RincianTableViewCell.identifier, for: indexPath) as? RincianTableViewCell else {return UITableViewCell()}
-            //            cell.addSubview(judulRincian)
+            if let data = dataLanggananKamu{
+            cell.setRincian(parseDataRincian: data.rincian[indexPath.row])
+            }
             return cell
+            
         case .deskripsi:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: DeskripsiTableViewCell.identifier, for: indexPath) as? DeskripsiTableViewCell else {return UITableViewCell()}
             return cell
@@ -107,6 +123,7 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
         switch detailSection(section){
         case .judulDetail, .masaAktif, .deskripsi:
             return nil
+            
         case .rincian:
             let headerView = UITableViewHeaderFooterView()
             
@@ -132,6 +149,7 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
         switch detailSection(section){
         case .judulDetail, .masaAktif, .deskripsi:
             return 0
+            
         case .rincian:
             return 20
         }

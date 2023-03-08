@@ -26,9 +26,19 @@ class NotifPembayaranViewController: UIViewController {
             checkImage.image = UIImage(named: "check")
         }
     }
+    @IBOutlet weak var detailPaketView: UIView!{
+        didSet{
+            detailPaketView.layer.cornerRadius = 10
+            detailPaketView.layer.borderColor = UIColor.borderColor.cgColor
+            detailPaketView.layer.borderWidth = 1
+        }
+    }
+    @IBOutlet weak var namaDanJumlahPaketLabel: UILabel!
+    @IBOutlet weak var rincianPaketLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
 }
+

@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol CollectionViewInsideTableViewDelegate: class {
-    func cellTaped(data:IndexPath)
+protocol CollectionViewInsideTableViewDelegate: AnyObject {
+    func langgananKamuCellTaped(data:PaketLanggananKamuStruct?)
 }
 
 enum homeSection: Int{
@@ -50,6 +50,7 @@ enum homeSection: Int{
 
 class HomeViewController: UIViewController {
 
+    let modelLanggananKamu = PaketProvider.langgananKamu()
     @IBOutlet weak var homeTableView: UITableView!
     
     override func viewDidLoad() {
@@ -63,8 +64,10 @@ class HomeViewController: UIViewController {
         homeTableView.dataSource = self
         homeTableView.register(UINib(nibName: "PaketColTableViewCell", bundle: nil), forCellReuseIdentifier: PaketColTableViewCell.identifier)
         homeTableView.register(UINib(nibName: "JudulSectionTableViewCell", bundle: nil), forCellReuseIdentifier: JudulSectionTableViewCell.identifier)
-        homeTableView.register(UINib(nibName: "PaketCardColTableViewCell", bundle: nil), forCellReuseIdentifier: PaketCardColTableViewCell.identifier)
+        homeTableView.register(LanggananKamuTableViewCell.self, forCellReuseIdentifier: LanggananKamuTableViewCell.identifier)
+        homeTableView.register(BelajarDiRumahAjaTableViewCell.self, forCellReuseIdentifier: BelajarDiRumahAjaTableViewCell.identifier)
         homeTableView.register(UINib(nibName: "VoucherColTableViewCell", bundle: nil), forCellReuseIdentifier: VoucherColTableViewCell.identifier)
+        homeTableView.register(PopularTableViewCell.self, forCellReuseIdentifier: PopularTableViewCell.identifier)
         homeTableView.separatorStyle = .none
     }
 
@@ -80,36 +83,50 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource, Colle
         case .paket:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketColTableViewCell.identifier, for: indexPath) as? PaketColTableViewCell else {return UITableViewCell()}
             return cell
+            
         case .judulLanggananKamu:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
             cell.judulSectionLabel.text = "Langganan Kamu"
             return cell
+            
         case .paketLanggananKamuCard:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: LanggananKamuTableViewCell.identifier, for: indexPath) as? LanggananKamuTableViewCell else {return UITableViewCell()}
+            cell.setupLanggananKamuCollectionView()
+            cell.modelLanggananKamu = modelLanggananKamu
             cell.delegate = self
             return cell
+            
         case .judulPopular:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
             cell.judulSectionLabel.text = "Popular"
             return cell
+            
         case .paketPopularCard:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
-                cell.delegate = self
-                return cell
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PopularTableViewCell.identifier, for: indexPath) as? PopularTableViewCell else {return UITableViewCell()}
+            cell.setupPopularCollectionView()
+            cell.modelLanggananKamu = modelLanggananKamu
+            cell.delegate = self
+            return cell
+            
         case .judulVoucher:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
             cell.judulSectionLabel.text = "Cari Tuyul, Yuk!"
             cell.setupLihatSemuaButton()
             return cell
+            
         case .voucher:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: VoucherColTableViewCell.identifier, for: indexPath) as? VoucherColTableViewCell else {return UITableViewCell()}
             return cell
+            
         case .judulBelajar:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: JudulSectionTableViewCell.identifier, for: indexPath) as? JudulSectionTableViewCell else {return UITableViewCell()}
             cell.judulSectionLabel.text = "Belajar #dirumahaja"
             return cell
+            
         case .paketBelajarCard:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PaketCardColTableViewCell.identifier, for: indexPath) as? PaketCardColTableViewCell else {return UITableViewCell()}
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: BelajarDiRumahAjaTableViewCell.identifier, for: indexPath) as? BelajarDiRumahAjaTableViewCell else {return UITableViewCell()}
+            cell.setupBelajarCollectionView()
+            cell.modelLanggananKamu = modelLanggananKamu
             cell.delegate = self
             return cell
         }
@@ -119,9 +136,10 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource, Colle
         return 9
     }
     
-    func cellTaped(data: IndexPath) {
+    func langgananKamuCellTaped(data: PaketLanggananKamuStruct?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPaketViewController") as! DetailPaketViewController
+        viewController.dataLanggananKamu = data
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

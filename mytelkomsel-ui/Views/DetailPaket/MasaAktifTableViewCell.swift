@@ -69,4 +69,8 @@ class MasaAktifTableViewCell: UITableViewCell {
             masaAktifLogoLabel.rightAnchor.constraint(equalTo: masaAktifView.rightAnchor, constant: -12)
         ])
     }
+    
+    func setMasaAktif(parseDataLanggananKamu: PaketLanggananKamuStruct){
+        masaAktifLogoLabel.text = parseDataLanggananKamu.masaAktif
+    }
 }

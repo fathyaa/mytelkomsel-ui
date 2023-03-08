@@ -27,19 +27,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp99.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-nt-YpQ">
-                                <rect key="frame" x="12" y="61" width="68" height="18"/>
+                                <rect key="frame" x="12" y="67" width="68" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp12.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-yk-tvc">
-                                <rect key="frame" x="12" y="84" width="77" height="21"/>
+                                <rect key="frame" x="12" y="90" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.93458670377731323" green="0.16848236322402954" blue="0.15587112307548523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet OMG!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysd-oV-R9o">
-                                <rect key="frame" x="164" y="85" width="113" height="21"/>
+                                <rect key="frame" x="164" y="90" width="113" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,12 +50,12 @@
                             <constraint firstItem="6NH-yk-tvc" firstAttribute="top" secondItem="xRe-nt-YpQ" secondAttribute="bottom" constant="5" id="4B1-cd-D9A"/>
                             <constraint firstItem="xRe-nt-YpQ" firstAttribute="leading" secondItem="SIK-eh-ebb" secondAttribute="leading" id="8FW-kU-Dzk"/>
                             <constraint firstItem="SIK-eh-ebb" firstAttribute="leading" secondItem="AMw-wl-yM2" secondAttribute="leading" constant="12" id="HBc-2a-AG1"/>
-                            <constraint firstAttribute="bottom" secondItem="Ysd-oV-R9o" secondAttribute="bottom" constant="20" id="HYY-QN-w40"/>
-                            <constraint firstItem="xRe-nt-YpQ" firstAttribute="top" secondItem="SIK-eh-ebb" secondAttribute="bottom" constant="20" id="L0m-gl-292"/>
+                            <constraint firstAttribute="bottom" secondItem="Ysd-oV-R9o" secondAttribute="bottom" constant="15" id="HYY-QN-w40"/>
+                            <constraint firstItem="xRe-nt-YpQ" firstAttribute="top" secondItem="SIK-eh-ebb" secondAttribute="bottom" priority="250" constant="20" id="L0m-gl-292"/>
                             <constraint firstItem="6NH-yk-tvc" firstAttribute="leading" secondItem="SIK-eh-ebb" secondAttribute="leading" id="Owh-UO-JCD"/>
                             <constraint firstItem="SIK-eh-ebb" firstAttribute="top" secondItem="AMw-wl-yM2" secondAttribute="top" constant="12" id="PFq-l8-l7z"/>
                             <constraint firstAttribute="trailing" secondItem="Ysd-oV-R9o" secondAttribute="trailing" constant="12" id="RCh-v4-6wX"/>
-                            <constraint firstAttribute="bottom" secondItem="6NH-yk-tvc" secondAttribute="bottom" priority="250" constant="12" id="ut7-O9-0Jb"/>
+                            <constraint firstAttribute="bottom" secondItem="6NH-yk-tvc" secondAttribute="bottom" constant="15" id="ut7-O9-0Jb"/>
                             <constraint firstItem="xRe-nt-YpQ" firstAttribute="leading" secondItem="SIK-eh-ebb" secondAttribute="leading" id="wQP-wW-X2B"/>
                         </constraints>
                     </view>
