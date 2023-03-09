@@ -48,6 +48,7 @@ class PaketCardCollectionViewCell: UICollectionViewCell {
         let mal = UILabel()
         mal.translatesAutoresizingMaskIntoConstraints = false
         mal.text = "30 HARI"
+        mal.textAlignment = .center
         mal.font = UIFont.systemFont(ofSize: 12)
         return mal
     }()
@@ -97,19 +98,18 @@ class PaketCardCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func setDataLanggananKamu(parseLanggananKamu: PaketLanggananKamuStruct){
+    func setDataPaket(parseDataPaket: PaketStruct){
         
-        if parseLanggananKamu.hargaAwal.isEmpty{
-            hargaAwalLabel.text = "empty"
-            hargaAwalLabel.textColor = UIColor.white
-            
+        if parseDataPaket.hargaDiskon.isEmpty{
+            hargaDiskonLabel.text = "FREE"
+        } else {
+            hargaDiskonLabel.text = parseDataPaket.hargaDiskon
         }
         
-        namaKuotaLabel.text = parseLanggananKamu.nama
-        jumlahKuotaLabel.text = parseLanggananKamu.jumlah
-        hargaAwalLabel.text = parseLanggananKamu.hargaAwal
-        hargaDiskonLabel.text = parseLanggananKamu.hargaDiskon
-        masaAktifLabel.text = parseLanggananKamu.masaAktif
+        hargaAwalLabel.text = parseDataPaket.hargaAwal
+        namaKuotaLabel.text = parseDataPaket.nama
+        jumlahKuotaLabel.text = parseDataPaket.jumlah
+        masaAktifLabel.text = parseDataPaket.masaAktif
     }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 class PopularTableViewCell: UITableViewCell {
 
     static let identifier = "PopularTableViewCell"
-    var modelLanggananKamu = PaketProvider.langgananKamu()
+    var paketPopular: [PaketStruct] = []
     
     var popularCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +27,8 @@ class PopularTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupPopularCollectionView(){
+    func setupPopularCollectionView(paket: [PaketStruct]){
+        self.paketPopular = paket.filter{ $0.isPopular}
         popularCollectionView.delegate = self
         popularCollectionView.dataSource = self
         popularCollectionView.register(UINib(nibName: "PaketCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PaketCardCollectionViewCell.identifier)
@@ -48,13 +49,13 @@ class PopularTableViewCell: UITableViewCell {
 
 extension PopularTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modelLanggananKamu.count
+        return paketPopular.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: PaketCardCollectionViewCell.identifier, for: indexPath) as? PaketCardCollectionViewCell else {return UICollectionViewCell()}
         cell.setupMasaAktif()
-        cell.setDataLanggananKamu(parseLanggananKamu: modelLanggananKamu[indexPath.row])
+        cell.setDataPaket(parseDataPaket: paketPopular[indexPath.row])
         return cell
     }
     
@@ -68,7 +69,7 @@ extension PopularTableViewCell: UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.langgananKamuCellTaped(data: modelLanggananKamu[indexPath.row])
+        self.delegate?.paketCellTaped(data: paketPopular[indexPath.row])
     }
     
 }

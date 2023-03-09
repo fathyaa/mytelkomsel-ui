@@ -36,8 +36,37 @@ class NotifPembayaranViewController: UIViewController {
     @IBOutlet weak var namaDanJumlahPaketLabel: UILabel!
     @IBOutlet weak var rincianPaketLabel: UILabel!
     
+    var dataPaket: PaketStruct?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let data = dataPaket{
+        setDataNotif(parseDataNotif: data)
+        }
+    }
+    
+    func setDataNotif(parseDataNotif: PaketStruct){
+        namaDanJumlahPaketLabel.text = parseDataNotif.nama + " " + parseDataNotif.jumlah
+        
+        var rincianPaket: String = ""
+        var counter = 0
+        
+        if let paket = dataPaket{
+        for data in paket.rincian{
+            
+            rincianPaket.append("\(data.jenis) \(data.jumlah)")
+            counter += 1
+            
+            if counter == paket.rincian.count {
+                break
+            } else {
+                rincianPaket.append(" + ")
+                continue
+            }
+        }
+    
+        rincianPaketLabel.text = rincianPaket
+    }
     }
 
 }

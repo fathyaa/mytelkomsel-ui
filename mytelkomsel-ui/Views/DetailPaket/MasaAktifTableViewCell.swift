@@ -33,6 +33,7 @@ class MasaAktifTableViewCell: UITableViewCell {
         let mal = UILabel()
         mal.translatesAutoresizingMaskIntoConstraints = false
         mal.text = "30 HARI"
+        mal.textAlignment = .center
         mal.font = UIFont.systemFont(ofSize: 12)
         mal.textColor = UIColor.red
         return mal
@@ -70,7 +71,7 @@ class MasaAktifTableViewCell: UITableViewCell {
         ])
     }
     
-    func setMasaAktif(parseDataLanggananKamu: PaketLanggananKamuStruct){
-        masaAktifLogoLabel.text = parseDataLanggananKamu.masaAktif
+    func setMasaAktif(parseDataPaket: PaketStruct){
+        masaAktifLogoLabel.text = parseDataPaket.masaAktif
     }
 }

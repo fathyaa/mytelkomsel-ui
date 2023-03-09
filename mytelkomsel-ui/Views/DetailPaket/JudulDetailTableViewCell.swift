@@ -24,8 +24,14 @@ class JudulDetailTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func setJudulDetail(parseDataLanggananKamu: PaketLanggananKamuStruct){
-        hargaAwalLabel.text = parseDataLanggananKamu.hargaAwal
-        hargaDiskonLabel.text = parseDataLanggananKamu.hargaDiskon
+    func setJudulDetail(parseDataPaket: PaketStruct){
+        
+        if parseDataPaket.hargaDiskon == "" {
+            hargaDiskonLabel.text = "FREE"
+        } else {
+            hargaDiskonLabel.text = parseDataPaket.hargaDiskon
+        }
+
+        hargaAwalLabel.text = parseDataPaket.hargaAwal
     }
 }

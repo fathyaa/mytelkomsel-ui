@@ -10,8 +10,9 @@ import UIKit
 class LanggananKamuTableViewCell: UITableViewCell {
 
     static let identifier = "LanggananKamuTableViewCell"
-    var modelLanggananKamu = PaketProvider.langgananKamu()
+    var paketLanggananKamu: [PaketStruct] = []
     weak var delegate: CollectionViewInsideTableViewDelegate?
+    
     var langgananKamuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -25,7 +26,8 @@ class LanggananKamuTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupLanggananKamuCollectionView(){
+    func setupLanggananKamuCollectionView(paket: [PaketStruct]){
+        self.paketLanggananKamu = paket.filter{ $0.isLanggananKamu}
         langgananKamuCollectionView.delegate = self
         langgananKamuCollectionView.dataSource = self
         langgananKamuCollectionView.register(UINib(nibName: "PaketCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PaketCardCollectionViewCell.identifier)
@@ -46,13 +48,13 @@ class LanggananKamuTableViewCell: UITableViewCell {
 
 extension LanggananKamuTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modelLanggananKamu.count
+        return paketLanggananKamu.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = langgananKamuCollectionView.dequeueReusableCell(withReuseIdentifier: PaketCardCollectionViewCell.identifier, for: indexPath) as? PaketCardCollectionViewCell else {return UICollectionViewCell()}
         cell.setupMasaAktif()
-        cell.setDataLanggananKamu(parseLanggananKamu: modelLanggananKamu[indexPath.row])
+        cell.setDataPaket(parseDataPaket: paketLanggananKamu[indexPath.row])
         return cell
     }
     
@@ -66,6 +68,6 @@ extension LanggananKamuTableViewCell: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.langgananKamuCellTaped(data: modelLanggananKamu[indexPath.row])
+        self.delegate?.paketCellTaped(data: paketLanggananKamu[indexPath.row])
     }
 }

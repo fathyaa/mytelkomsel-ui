@@ -10,6 +10,7 @@ import UIKit
 class VoucherColTableViewCell: UITableViewCell {
 
     static let identifier = "VoucherColTableViewCell"
+    var modelVoucher = PaketProvider.voucher()
     @IBOutlet weak var voucherCollectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +27,12 @@ class VoucherColTableViewCell: UITableViewCell {
 
 extension VoucherColTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return modelVoucher.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = voucherCollectionView.dequeueReusableCell(withReuseIdentifier: VoucherCollectionViewCell.identifier, for: indexPath) as? VoucherCollectionViewCell else {return UICollectionViewCell()}
+        cell.setDataVoucher(parseDataVoucher: modelVoucher[indexPath.row])
         cell.clipsToBounds = false
         return cell
     }

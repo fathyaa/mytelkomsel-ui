@@ -199,7 +199,7 @@
                     <connections>
                         <outlet property="checkImage" destination="H9A-IL-EAE" id="BsY-dd-FtR"/>
                         <outlet property="detailPaketView" destination="rgv-0k-3Jr" id="n6s-SW-gKZ"/>
-                        <outlet property="namaDanJumlahPaketLabel" destination="BXu-PZ-RfX" id="Bzy-jh-flU"/>
+                        <outlet property="namaDanJumlahPaketLabel" destination="BXu-PZ-RfX" id="4QY-GR-klY"/>
                         <outlet property="pinkCircleView" destination="lvj-tR-jzg" id="1qi-3X-THi"/>
                         <outlet property="redCircleView" destination="5BD-fP-axv" id="z8M-4p-GtW"/>
                         <outlet property="rincianPaketLabel" destination="zDN-gy-qJb" id="iPD-dV-sBV"/>

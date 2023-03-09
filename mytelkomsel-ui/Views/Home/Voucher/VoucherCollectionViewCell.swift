@@ -35,4 +35,9 @@ class VoucherCollectionViewCell: UICollectionViewCell {
         voucherShadowView.layer.shadowOffset = .zero
         voucherShadowView.layer.shadowRadius = 4
     }
+    
+    func setDataVoucher(parseDataVoucher: VoucherStruct){
+        voucherImage.image = UIImage(named: parseDataVoucher.thumbnailImage)
+        voucherLabel.text = parseDataVoucher.label
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 class BelajarDiRumahAjaTableViewCell: UITableViewCell {
     
     static let identifier = "BelajarDiRumahAjaTableViewCell"
-    var modelLanggananKamu = PaketProvider.langgananKamu()
+    var paketBelajar: [PaketStruct] = []
     
     var belajarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +27,8 @@ class BelajarDiRumahAjaTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupBelajarCollectionView(){
+    func setupBelajarCollectionView(paket: [PaketStruct]){
+        self.paketBelajar = paket.filter{ $0.isBelajar}
         belajarCollectionView.delegate = self
         belajarCollectionView.dataSource = self
         belajarCollectionView.register(UINib(nibName: "PaketCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PaketCardCollectionViewCell.identifier)
@@ -48,13 +49,13 @@ class BelajarDiRumahAjaTableViewCell: UITableViewCell {
 
 extension BelajarDiRumahAjaTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modelLanggananKamu.count
+        return paketBelajar.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = belajarCollectionView.dequeueReusableCell(withReuseIdentifier: PaketCardCollectionViewCell.identifier, for: indexPath) as? PaketCardCollectionViewCell else {return UICollectionViewCell()}
         cell.setupMasaAktif()
-        cell.setDataLanggananKamu(parseLanggananKamu: modelLanggananKamu[indexPath.row])
+        cell.setDataPaket(parseDataPaket: paketBelajar[indexPath.row])
         return cell
     }
     
@@ -68,6 +69,6 @@ extension BelajarDiRumahAjaTableViewCell: UICollectionViewDelegateFlowLayout, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.langgananKamuCellTaped(data: modelLanggananKamu[indexPath.row])
+        self.delegate?.paketCellTaped(data: paketBelajar[indexPath.row])
     }
 }

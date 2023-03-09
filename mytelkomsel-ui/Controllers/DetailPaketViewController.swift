@@ -31,7 +31,7 @@ enum detailSection: Int {
 
 class DetailPaketViewController: UIViewController {
     
-    var dataLanggananKamu: PaketLanggananKamuStruct?
+    var dataPaket: PaketStruct?
     @IBOutlet weak var detailPaketTableView: UITableView!
     @IBOutlet weak var beliSekarangButton: UIButton!{
         didSet{
@@ -42,7 +42,7 @@ class DetailPaketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = dataLanggananKamu?.jumlah
+        title = dataPaket?.jumlah
         setupPaketTableView()
         self.beliSekarangButton.addTarget(self, action: #selector(navigateToNotif), for: .touchUpInside)
     }
@@ -60,6 +60,7 @@ class DetailPaketViewController: UIViewController {
     @objc func navigateToNotif(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "NotifPembayaranViewController") as! NotifPembayaranViewController
+        viewController.dataPaket = dataPaket
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -67,7 +68,7 @@ class DetailPaketViewController: UIViewController {
 extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2{
-            return dataLanggananKamu?.rincian.count ?? 0
+            return dataPaket?.rincian.count ?? 0
         } else {
             return 1
         }
@@ -78,8 +79,8 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
         case .judulDetail:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: JudulDetailTableViewCell.identifier, for: indexPath) as? JudulDetailTableViewCell else {return UITableViewCell()}
             
-            if let data = dataLanggananKamu{
-            cell.setJudulDetail(parseDataLanggananKamu: data)
+            if let data = dataPaket{
+            cell.setJudulDetail(parseDataPaket: data)
             }
             
             return cell
@@ -88,15 +89,15 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: MasaAktifTableViewCell.identifier, for: indexPath) as? MasaAktifTableViewCell else {return UITableViewCell()}
             cell.setupMasaAktif()
             
-            if let data = dataLanggananKamu{
-            cell.setMasaAktif(parseDataLanggananKamu: data)
+            if let data = dataPaket{
+            cell.setMasaAktif(parseDataPaket: data)
             }
             
             return cell
             
         case .rincian:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: RincianTableViewCell.identifier, for: indexPath) as? RincianTableViewCell else {return UITableViewCell()}
-            if let data = dataLanggananKamu{
+            if let data = dataPaket{
             cell.setRincian(parseDataRincian: data.rincian[indexPath.row])
             }
             return cell
