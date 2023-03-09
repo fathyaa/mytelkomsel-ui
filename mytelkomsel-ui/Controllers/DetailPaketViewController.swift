@@ -97,9 +97,11 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
             
         case .rincian:
             guard let cell = detailPaketTableView.dequeueReusableCell(withIdentifier: RincianTableViewCell.identifier, for: indexPath) as? RincianTableViewCell else {return UITableViewCell()}
+            
             if let data = dataPaket{
             cell.setRincian(parseDataRincian: data.rincian[indexPath.row])
             }
+            
             return cell
             
         case .deskripsi:
@@ -150,7 +152,6 @@ extension DetailPaketViewController: UITableViewDelegate, UITableViewDataSource{
         switch detailSection(section){
         case .judulDetail, .masaAktif, .deskripsi:
             return 0
-            
         case .rincian:
             return 20
         }

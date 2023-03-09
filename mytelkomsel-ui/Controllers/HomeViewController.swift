@@ -51,7 +51,6 @@ enum homeSection: Int{
 class HomeViewController: UIViewController {
 
     let modelPaket = PaketProvider.paket()
-    let modelVoucher = PaketProvider.voucher()
     @IBOutlet weak var homeTableView: UITableView!
     
     override func viewDidLoad() {
@@ -115,7 +114,6 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource, Colle
             
         case .voucher:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: VoucherColTableViewCell.identifier, for: indexPath) as? VoucherColTableViewCell else {return UITableViewCell()}
-            cell.modelVoucher = modelVoucher
             return cell
             
         case .judulBelajar:

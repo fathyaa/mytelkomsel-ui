@@ -50,24 +50,22 @@ class NotifPembayaranViewController: UIViewController {
         
         var rincianPaket: String = ""
         var counter = 0
-        
         if let paket = dataPaket{
-        for data in paket.rincian{
-            
-            rincianPaket.append("\(data.jenis) \(data.jumlah)")
-            counter += 1
-            
-            if counter == paket.rincian.count {
-                break
-            } else {
-                rincianPaket.append(" + ")
-                continue
+            for data in paket.rincian{
+                rincianPaket.append("\(data.jenis) \(data.jumlah)")
+                counter += 1
+                
+                if counter == paket.rincian.count {
+                    break
+                } else {
+                    rincianPaket.append(" + ")
+                    continue
+                }
             }
-        }
-    
+            
         rincianPaketLabel.text = rincianPaket
+            
+        }
     }
-    }
-
 }
 

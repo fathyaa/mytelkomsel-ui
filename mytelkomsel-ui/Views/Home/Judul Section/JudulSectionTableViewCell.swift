@@ -32,7 +32,7 @@ class JudulSectionTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             lihatSemuaButton.topAnchor.constraint(equalTo: judulSectionView.topAnchor, constant: 24),
             lihatSemuaButton.bottomAnchor.constraint(equalTo: judulSectionView.bottomAnchor, constant: -20),
-            lihatSemuaButton.leftAnchor.constraint(equalTo: judulSectionLabel.rightAnchor, constant: 110),
+//            lihatSemuaButton.leftAnchor.constraint(equalTo: judulSectionLabel.rightAnchor, constant: 0),
             lihatSemuaButton.rightAnchor.constraint(equalTo: judulSectionView.rightAnchor, constant: -15)
         ])
     }

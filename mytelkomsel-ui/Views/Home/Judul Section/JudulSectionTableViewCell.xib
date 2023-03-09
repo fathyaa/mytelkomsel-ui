@@ -47,7 +47,7 @@
                 <outlet property="judulSectionLabel" destination="jnW-7X-Q4q" id="mYb-lm-Dmd"/>
                 <outlet property="judulSectionView" destination="3WJ-P7-p1N" id="cI7-IB-h3h"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="75.669642857142847"/>
+            <point key="canvasLocation" x="131.8840579710145" y="75"/>
         </tableViewCell>
     </objects>
     <resources>
